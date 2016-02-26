@@ -1,0 +1,41 @@
+<ion-view view-title="Current Exercise">
+  <ion-content>
+  <div class="list card">
+
+  <div class="item">
+    <h1>{{exercise[0].name}}</h1>
+    <p>{{exercise[0].targetMuscle}}</p>
+  </div>
+
+  <div class="item item-body">
+    <div class="row">
+      <div class="col">
+        <h3>Notes:</h3>
+        <p>iusto ipsa repellendus! Voluptas enim laboriosam, commodi in cupiditate.</p>
+      </div>
+    </div>
+</div>
+</div>
+
+<div class="list list-inset">
+  <ion-item  ng-repeat="item in exercise[0].sets">
+    <div class="row">
+      <div class="col-25">
+      <label class="item item-input">
+        <input type="text" placeholder="" value="{{item.weight}}">
+      </label></div>
+      <div class="col col-center"><p>Lb</p></div>
+
+      <div class="col-25">
+      <label class="item item-input">
+        <input type="text" placeholder="" value="{{item.reps}}">
+      </label></div>
+      <div class="col col-center"><p>Reps</p></div>
+      <div class="col col-center"><button ng-class="{'button-balanced' : status}" class="button icon ion-ios-checkmark-outline" ng-click="status=!status"></button></div>
+    </div>
+  </div>
+</ion-item>
+</div>
+  <button ng-class="{'button-balanced' : completed}" class="button button-large button-clear icon ion-ios-checkmark-outline button-full" ng-click="completed=!completed"></button>
+</ion-content>
+</ion-view>

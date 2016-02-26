@@ -1,0 +1,19 @@
+<ion-view view-title="Routines available">
+  <div class="bar bar-subheader">
+    <ion-list>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" ng-model="routineFilter" placeholder="Search">
+    </label>
+    </ion-list>
+  </div>
+
+  <ion-content class="has-subheader">
+    <ion-list>
+        <a class="item item-icon-right" ng-repeat="item in routines | filter: routineFilter" href="#/app/routines/{{item.id}}">
+          {{item.name}}
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+  </ion-list>
+  </ion-content>
+</ion-view>

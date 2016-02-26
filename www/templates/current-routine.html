@@ -1,0 +1,21 @@
+<ion-view view-title="Current Routine">
+  <ion-content>
+    <ion-list  ng-repeat="item in currentRoutine | filter : { active:true }"
+          show-delete="shouldShowDelete"
+          show-reorder="shouldShowReorder"
+          can-swipe="listCanSwipe">
+  <ion-item ng-repeat="exercise in item.exercises" class="item-icon-right" ng-click="loadExercise(exercise.name)">
+    <h2>
+      {{exercise.name}}
+    </h2>
+    <p>{{exercise.targetMuscle}}</p>
+
+    <i class="icon ion-ios-arrow-right"></i>
+   <ion-option-button class="button-assertive icon-left ion-ios-trash-outline"
+                      ng-click="edit(item)">
+     Remove
+   </ion-option-button>
+    </ion-item>
+  </ion-list>
+  </ion-content>
+</ion-view>

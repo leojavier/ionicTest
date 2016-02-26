@@ -1,0 +1,11 @@
+.lauch-routine-subheader{
+  padding:0px;
+  background:#FFF;
+}
+.has-subheader{
+  margin-top: 15px;
+}
+
+.button-large .icon:before, .button-large.icon:before, .button-large.icon-left:before, .button-large.icon-right:before {
+    font-size: 80px;
+}

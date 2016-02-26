@@ -1,0 +1,28 @@
+<ion-view view-title="Exercise List">
+  <div class="bar bar-subheader">
+    <div class="lauch-routine-subheader">
+          <button class="button  button-block button-positive  icon-left ion-ios-paperplane" ng-click="launchRoutine(routineId)">Lauch routine</button>
+    </div>
+  </div>
+  <ion-content class="has-subheader">
+    <ion-list  ng-repeat="item in routines | filter :  routineId "
+          show-delete="shouldShowDelete"
+          show-reorder="shouldShowReorder"
+          can-swipe="listCanSwipe">
+  <ion-item ng-repeat="exercise in item.exercises">
+    <h2>
+      {{exercise.name}}
+    </h2>
+    <p>{{exercise.targetMuscle}}</p>
+    <ion-option-button class="button-positive"
+                      ng-click="share(item)">
+     Share
+   </ion-option-button>
+   <ion-option-button class="button-assertive"
+                      ng-click="edit(item)">
+     Edit
+   </ion-option-button>
+    </ion-item>
+  </ion-list>
+  </ion-content>
+</ion-view>
